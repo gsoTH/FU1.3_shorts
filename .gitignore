@@ -124,7 +124,3 @@ dmypy.json
 *.sqlite
 api/.DS_Store
 api/tests/.DS_Store
-
-
-#github
-.gitignore/workfllows
