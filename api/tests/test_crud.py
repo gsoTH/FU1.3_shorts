@@ -1,7 +1,7 @@
 # Diese Datei beinhaltet Unit-Tests für die Funktionen (Units) in 
 # der Datei ../crud.py.
 
-from api.crud import create_short, read_short, read_short_random, delete_short
+from api.crud import * #create_short, read_short, read_short_random, delete_short
 from api.database import get_connection, create_example_database
 import pytest
 
@@ -14,7 +14,7 @@ def create_fresh_database():
 
 def test_create_short__neuer_short_bekommt_id(create_fresh_database):
     # Arrange
-    url = "https://www.youtube.com/shorts/Ny5vjwA-3hU"
+    url = "https://www.youtube.com/shorts/8K_YqT16pYk"
     # Act
     id = create_short(url)
     # Assert
@@ -28,6 +28,15 @@ def test_read_short__short_kann_abgerufen_werden(create_fresh_database):
     url = read_short(id)
     # Assert
     assert url[0] == 'https://youtube.com/shorts/dxqjrVuDLEo?si=mwWakcrMmgBA8vVe'
+
+
+def test_read_all__gibt_liste_an_shorts_aus(create_fresh_database):
+    #Arrange
+    #Act
+    url:list[str] = read_all()
+    #Assert
+    assert isinstance(url,list)
+    assert len(url) > 0
 
 
 def test_read_short_random__short_wird_ausgegeben(create_fresh_database):

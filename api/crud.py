@@ -24,6 +24,17 @@ def read_short(id: int) -> str:
     con.close()
     return url
 
+
+def read_all() -> list[str]:
+    """ Holt alle Short-Links aus der Datenbank. """
+    con = get_connection()
+    c = con.cursor()
+    c.execute("SELECT url FROM shorts")
+    url = c.fetchall()
+    con.close()
+    return url
+
+
 def read_short_random() -> str:
     """ Holt einen zufälligen Short-Link aus der Datenbank. """
     con = get_connection()
@@ -42,3 +53,5 @@ def delete_short(id: int) -> bool:
     con.close()
     return True
 
+if __name__ == "__main__":
+    pass
