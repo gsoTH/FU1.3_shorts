@@ -14,7 +14,7 @@ def create_fresh_database():
 
 def test_create_short__neuer_short_bekommt_id(create_fresh_database):
     # Arrange
-    url = "https://www.youtube.com/shorts/8K_YqT16pYk"
+    url = "https://youtube.com/shorts/0zfuSBmU4_s"
     # Act
     id = create_short(url)
     # Assert
@@ -27,7 +27,7 @@ def test_read_short__short_kann_abgerufen_werden(create_fresh_database):
     # Act
     url = read_short(id)
     # Assert
-    assert url[0] == 'https://youtube.com/shorts/dxqjrVuDLEo?si=mwWakcrMmgBA8vVe'
+    assert url == 'https://youtube.com/shorts/dxqjrVuDLEo?si=mwWakcrMmgBA8vVe'
 
 
 def test_read_all__gibt_liste_an_shorts_aus(create_fresh_database):
@@ -40,13 +40,12 @@ def test_read_all__gibt_liste_an_shorts_aus(create_fresh_database):
 
 
 def test_read_short_random__short_wird_ausgegeben(create_fresh_database):
-    ## Ein Test auf Zufälligkeit ist schwierig, da der Test
-    ## Zufällig fehlschlagen könnte.
-    
     # Act
-    url = read_short_random()
+    erste_url:str = read_short_random()
+    #zweite_url:str = read_short_random()
     # Assert
-    assert type(url[0]) is str
+    assert type(erste_url) is str
+    #assert erste_url != zweite_url     # könnte zufällig fehlschlagen
 
 
 def test_delete_short__short_wird_entfernt(create_fresh_database):

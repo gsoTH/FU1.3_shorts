@@ -64,8 +64,8 @@ def create_example_database(con: sqlite3.Connection) -> None:
 
     insert_statement = """INSERT INTO shorts (url) VALUES
                             ('https://youtube.com/shorts/dxqjrVuDLEo?si=mwWakcrMmgBA8vVe')
+                        ,   ('https://www.youtube.com/shorts/8K_YqT16pYk')
                         ,   ('https://youtube.com/shorts/NZtfn2lj4Fs')
-                        ,   ('https://youtube.com/shorts/0zfuSBmU4_s')
                         ,   ('https://youtube.com/shorts/TIP11RKLo80')
                         ;"""
     con.execute(insert_statement)

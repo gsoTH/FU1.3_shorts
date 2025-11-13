@@ -20,9 +20,9 @@ def read_short(id: int) -> str:
     con = get_connection()
     c = con.cursor()
     c.execute("SELECT url FROM shorts WHERE id = ?", (id,))
-    url = c.fetchone()
+    url:list[str] = c.fetchone()
     con.close()
-    return url
+    return url[0]
 
 
 def read_all() -> list[str]:
@@ -42,7 +42,7 @@ def read_short_random() -> str:
     c.execute("SELECT url FROM shorts ORDER BY RANDOM() LIMIT 1")
     url = c.fetchone()
     con.close()
-    return url
+    return url[0]
 
 def delete_short(id: int) -> bool:
     """ Löscht einen Short-Link aus der Datenbank. """
@@ -52,6 +52,7 @@ def delete_short(id: int) -> bool:
     con.commit()
     con.close()
     return True
+
 
 if __name__ == "__main__":
     pass
