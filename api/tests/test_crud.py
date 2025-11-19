@@ -1,15 +1,15 @@
 # Diese Datei beinhaltet Unit-Tests für die Funktionen (Units) in 
 # der Datei ../crud.py.
 
-from src.crud import * #create_short, read_short, read_short_random, delete_short
-import src.database as database
+from api.crud import * #create_short, read_short, read_short_random, delete_short
+from api.database import get_connection, create_example_database
 import pytest
 
 
 @pytest.fixture
 def create_fresh_database():
-    con = database.get_connection()
-    database.create_example_database(con)
+    con = get_connection()
+    create_example_database(con)
 
 
 def test_create_short__neuer_short_bekommt_id(create_fresh_database):
