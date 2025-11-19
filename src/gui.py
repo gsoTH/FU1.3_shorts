@@ -5,7 +5,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 import webbrowser
-import api.crud as crud
+import crud
 
 
 class YouTubeShortsGUI:

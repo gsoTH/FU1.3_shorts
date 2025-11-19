@@ -122,5 +122,5 @@ dmypy.json
 
 #SQLite Database
 *.sqlite
-api/.DS_Store
-api/tests/.DS_Store
+src/.DS_Store
+src/tests/.DS_Store
