@@ -16,7 +16,7 @@
 ### Beschreibung des Ist-Zustands
 Youtube hat ~~Innovation betrieben~~ es der Konkurrenz nachgemacht und Kurzvideos, sogenannte shorts, implementiert. Leider gibt es keine gute Funktion zum speichern, kategorisieren und organisieren der shorts. 
 
-Um Abhilfe zu schaffen wurde bereits eine Datenbank entwickelt, die mit einer einfachen GUI bedient werden kann. 
+Um Abhilfe zu schaffen wurde bereits eine Datenbank entwickelt, die mit einer einfachen GUI bedient werden kann. Die GUI wird gestartet, indem man das Modul gui.py ausführt.
 
 ### Beschreibung des Soll-Zustands
 Um die App nicht nur lokal nutzen zu können, sollen die bereits vorhandenen Funktionen über eine REST-API aufgerufen werden können. Die GUI soll lokal weiterhin funktionieren.
