@@ -27,7 +27,7 @@ def test_read_short__short_kann_abgerufen_werden(create_fresh_database):
     # Act
     url = read_short(id)
     # Assert
-    assert url == 'https://youtube.com/shorts/dxqjrVuDLEo?si=mwWakcrMmgBA8vVe'
+    assert url == 'https://youtube.com/shorts/dxqjrVuDLEo'
 
 
 def test_read_all__gibt_liste_an_shorts_aus(create_fresh_database):
